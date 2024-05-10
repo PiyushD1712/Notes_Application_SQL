@@ -1,4 +1,4 @@
-package com.example.notesapplication;
+package com.example.notesapplication.model;
 
 public class Notes {
     private int id;

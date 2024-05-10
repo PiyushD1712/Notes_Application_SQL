@@ -1,16 +1,14 @@
-package com.example.notesapplication;
+package com.example.notesapplication.repository;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
+import com.example.notesapplication.model.Notes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NotesDatabase extends SQLiteOpenHelper {

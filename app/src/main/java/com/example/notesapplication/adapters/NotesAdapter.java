@@ -1,16 +1,20 @@
-package com.example.notesapplication;
+package com.example.notesapplication.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.notesapplication.R;
 import com.example.notesapplication.databinding.NoteListBinding;
+import com.example.notesapplication.model.Notes;
+import com.example.notesapplication.views.UpdateNoteActivity;
 
 import java.util.List;
 
@@ -55,9 +59,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     Notes note = notesList.get(position);
-                    Intent intent = new Intent(v.getContext(),UpdateNoteActivity.class);
+                    Intent intent = new Intent(v.getContext(), UpdateNoteActivity.class);
                     intent.putExtra("note_id",note.getId());
                     v.getContext().startActivity(intent);
+                }
+            });
+            noteListBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(context, "Swipe right to delete", Toast.LENGTH_SHORT).show();
+                    return true;
                 }
             });
         }

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="notes"
-            type="com.example.notesapplication.Notes" />
+            type="com.example.notesapplication.model.Notes" />
         <import type="java.time.LocalDate"/>
     </data>
     <androidx.cardview.widget.CardView
